@@ -70,7 +70,7 @@ sala.onPlayerKicked = function(jogadorKikado, motivo, ban, jogadorDeu) {
 	
 }
 
-//Ao detectar um tique de jogo (60x por segundo)
+//Ao detectar um tique de jogo (acontece 60x por segundo)
 sala.onGameTick = function() {
 	
 }
