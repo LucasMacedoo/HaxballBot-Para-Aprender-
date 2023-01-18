@@ -11,7 +11,7 @@ var sala = HBInit ({
 	noPlayer: false
 });
 
-var linkteste; //Variável para sala.onRoomLink
+var linkteste; //Variável global para sala.onRoomLink
 
 //Cada função é preciso utilizar o nome da variável de criação da sala!!!
 //EVENTOS
