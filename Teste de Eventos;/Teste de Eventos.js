@@ -105,7 +105,7 @@ sala.onStadiumChange = function(novoEstadio, jogadorDeu) {
 
 //Ao criar a sala e obter o link
 sala.onRoomLink = function(url) {
-	sala.sendChat("Mensagem após o evento: LINK FOI DEFINIDO");
+	sala.sendChat("Mensagem após o evento: LINK FOI DEFINIDO"); //Este você não conseguirá ver, pois é logo após a criação da sala
 }
 
 //Após definir o RateLimit
