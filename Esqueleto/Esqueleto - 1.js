@@ -91,7 +91,7 @@ sala.onPositionsReset = function() {
 }
 
 //Após o jogador apertar em alguma tecla
-sala.onPlayerActivity = function(player) {
+sala.onPlayerActivity = function(jogador) {
 	
 }
 
