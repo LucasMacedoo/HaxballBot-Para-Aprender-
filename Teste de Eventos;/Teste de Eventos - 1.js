@@ -94,7 +94,7 @@ sala.onPositionsReset = function() {
 }
 
 //Após o jogador apertar em alguma tecla
-sala.onPlayerActivity = function(player) {
+sala.onPlayerActivity = function(jogador) {
 	sala.sendChat("Mensagem após o evento: JOGADOR MOSTRA ATIVIDADE");
 }
 
