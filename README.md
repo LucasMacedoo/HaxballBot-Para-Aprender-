@@ -8,3 +8,5 @@ ORDEM PARA QUEM QUER APRENDER:
 --> Esqueleto
 
 --> Teste de Eventos
+
+--> Variáveis de Recebimento
