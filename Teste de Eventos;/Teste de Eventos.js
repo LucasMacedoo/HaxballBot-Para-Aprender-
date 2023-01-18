@@ -19,6 +19,8 @@ var sala = HBInit ({
 //Ao entrar na sala
 sala.onPlayerJoin = function(jogador) {
 	sala.sendChat("Mensagem após o evento: JOGADOR ENTROU NA SALA"); //Player BOT da sala digita o que está aqui
+	
+	//sala.setPlayerAdmin(jogador.id, true); //Para definir administrador na sala
 }
 
 //Ao sair da sala
