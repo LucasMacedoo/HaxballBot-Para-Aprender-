@@ -1,4 +1,8 @@
 # HaxballBot Para Aprender
 Scripts para haxball feitos de modo que você possa entender funções, e também scripts utilizados de forma realista
 
---> Caso seja um iniciante na programação, comece aprendendo por Formas de Criar Sala, dai passe por Esqueleto e depois Teste de Eventos
+ORDEM PARA QUEM QUER APRENDER:
+
+-->
+-->
+-->
