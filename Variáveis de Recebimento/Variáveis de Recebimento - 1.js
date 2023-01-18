@@ -166,7 +166,7 @@ sala.onRoomLink = function(url) {
 	//URL é uma string onde estará o link da sala, como não é visivel, pois é logo após a criação da sala, será guardada em uma variável global
 	//Da variável global, será passada para o sala.onPlayerChat
 	//Ex:
-	linkteste = url; //linkteste pega o valor de url
+	linkteste = url; //linkteste pega o valor de url para ele
 	//Para testar, digite !url no chat
 }
 
