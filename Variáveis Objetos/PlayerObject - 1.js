@@ -1,4 +1,4 @@
-//Código feito para o usuário entender o objeto PlayerObject
+//Código feito para o usuário entender o objeto PlayerObject.
 
 //Inicialmente vamos criar um HBInit para a criação da sala
 
