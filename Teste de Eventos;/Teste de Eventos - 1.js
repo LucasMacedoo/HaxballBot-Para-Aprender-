@@ -1,3 +1,5 @@
+//Código feito para o usuário entender cada evento do HaxBall
+
 //Inicialmente vamos criar um HBInit para a criação da sala
 
 var sala = HBInit ({
