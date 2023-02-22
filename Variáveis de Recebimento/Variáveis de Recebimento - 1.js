@@ -1,3 +1,5 @@
+//Código feito para o usuário entender todas as variáveis que são utilizadas em cada evento
+
 //Inicialmente vamos criar um HBInit para a criação da sala
 
 var sala = HBInit ({
