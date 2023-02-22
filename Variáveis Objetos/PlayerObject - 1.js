@@ -21,7 +21,8 @@ sala.onPlayerJoin = function(jogador) {
 	
 	
 	//Utilizaremos este evento para mostrar o objeto 
-	//Um sendChat sera utilizado para visualizar no chat 
+	//Um sendChat sera utilizado para visualizar no chat
+	//OBS: alguns objetos podem não ser vistos em outros eventos
 	sala.sendChat("ID do Jogador: " + jogador.id);
 	sala.sendChat("Nick do Jogador: " + jogador.name);
 	sala.sendChat("Time do Jogador: " + jogador.team); //0 para SPEC, 1 para RED, 2 para BLUE
