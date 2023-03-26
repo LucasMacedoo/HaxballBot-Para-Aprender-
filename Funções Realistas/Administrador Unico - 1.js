@@ -32,12 +32,12 @@ function darAdministrador(jogador) {
 
 //Ao entrar na sala
 sala.onPlayerJoin = function(jogador) {
-	darAdministrador(jogador);
+	darAdministrador(jogador); 
 }
 
 //Ao sair da sala
 sala.onPlayerLeave = function(jogador) {
-	darAdministrador(jogador);
+	darAdministrador(jogador); //Caso o adm saia da sala, esta função é util para determinar um novo adm
 }
 
 //Após a vitória de um time
