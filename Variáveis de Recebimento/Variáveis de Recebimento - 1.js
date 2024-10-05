@@ -182,3 +182,16 @@ sala.onKickRateLimitSet = function(min, rate, burst, jogadorDeu) {
 	sala.sendChat(jogadorDeu.name + " definiu as configurações:");
 	sala.sendChat("MIN: " + min + ", RATE: " + rate + ", BURST: " + burst);
 }
+
+//Após alterar as configurações de bloqueio de equipe
+sala.onTeamsLockChange = function(bloqueio, jogadorDeu) {
+	//bloqueio é uma variável boolean, devolve true (caso configuração bloqueia troca de equipe) ou false (caso configuração desbloqueia troca de equipe)
+	//jogadorDeu se refere ao jogador que efetuou o evento
+	sala.sendChat(jogadorDeu.name + " definiu as configurações:");
+	if(bloqueio == true) {
+		sala.sendChat("Você não poderá trocar de equipe");
+	} 
+	else {
+		sala.sendChat("Troca de equipe autorizada");
+	}
+}
