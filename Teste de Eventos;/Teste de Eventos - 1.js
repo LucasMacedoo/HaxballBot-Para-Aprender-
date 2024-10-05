@@ -114,3 +114,8 @@ sala.onRoomLink = function(url) {
 sala.onKickRateLimitSet = function(min, rate, burst, jogadorDeu) {
 	sala.sendChat("Mensagem após o evento: JOGADOR DEFINIU UM KICKRATELIMIT");
 }
+
+//Após alterar as configurações de bloqueio de equipe
+sala.onTeamsLockChange = function(bloqueio, jogadorDeu) {
+	sala.sendChat("Mensagem após o evento: CONFIGURAÇÃO DE BLOQUEIO DE EQUIPE MODIFICADO");
+}
