@@ -109,3 +109,8 @@ sala.onRoomLink = function(url) {
 sala.onKickRateLimitSet = function(min, rate, burst, jogadorDeu) {
 	
 }
+
+//Após alterar as configurações de bloqueio de equipe
+sala.onTeamsLockChange = function(bloqueio, jogadorDeu) {
+	
+}
