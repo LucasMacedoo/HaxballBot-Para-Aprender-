@@ -122,7 +122,7 @@ sala.onPlayerChat = function(jogador,mensagem) {
 	//ESTÁDIOS DEFAULT: Classic, Easy, Small, Big, Rounded, Hockey, Big Hockey, Big Easy, Big Rounded e Huge
 	if(mensagem == "!trocarDefault") {
 		//sala.setDefaultStadium precisa somente de uma string que representa o nome do estádio default
-		sala.setDefaultStadium("Hockey");
+		sala.setDefaultStadium("Hockey"); //Insere um estádio default
 	}
 	
 	//Utilização do setCustomStadium
@@ -130,7 +130,22 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		//sala.setCustomStadium precisa somente de uma variável ou string que representa o estádio customizado
 		//veja abaixo um exemplo de uma string de um pequeno estádio customizado
 		//você encontra esses arquivos no haxmaps ou poderá criar um usando haxpuck
-		sala.setCustomStadium(estadio);
+		sala.setCustomStadium(estadio); //Insere um estádio customizado
+	}
+	
+	//Utilização do setPassword
+	if(mensagem == "!senha") {
+		//sala.setPassword precisa somente de uma string para representar a senha, caso seja null, não terá senha
+		sala.setPassword("teste123"); //Insere uma senha na sala
+	}
+	
+	//Utilização do setRequireRecaptcha
+	if(mensagem == "!abrirRecaptcha") {
+		//sala.setRequireRecaptcha precisa somente de true (para ativar entrada via recaptcha) ou false (para remover recaptcha)
+		sala.setRequireRecaptcha(true); //Insere uma configuração de recaptcha, no caso, os próximos usuários terão que usar recaptcha
+	}
+	else if(mensagem == "!fecharRecaptcha") {
+		sala.setRequireRecaptcha(false); //Insere uma configuração de recaptcha, no caso, os próximos usuários NÃO terão que usar recaptcha
 	}
 }
 
