@@ -33,7 +33,24 @@ sala.onTeamVictory = function(pontos) {
 
 //Ao digitar alguma coisa no chat
 sala.onPlayerChat = function(jogador,mensagem) {
+	//Utilização do setPlayerTeam
+	if(mensagem == "!azul") {
+		sala.setPlayerTeam(jogador.id, 2); //Modifica o jogador de time, no caso, vai pra equipe azul
+	} 
+	else if(mensagem == "!vermelho") {
+		sala.setPlayerTeam(jogador.id, 1); //Modifica o jogador de time, no caso, vai pra equipe vermelha
+	}
+	else if(mensagem == "!spec") {
+		sala.setPlayerTeam(jogador.id, 0); //Modifica o jogador de time, no caso, vai pra equipe spec
+	}
 	
+	//Utilização do kickPlayer
+	if(mensagem == "!kick") {
+		sala.kickPlayer(jogador.id, "kick", false); //Expulsa o jogador da sala, neste caso ele poderá voltar
+	}
+	else if(mensagem == "!ban") {
+		sala.kickPlayer(jogador.id, "Banido", true) //Expulsa o jogador da sala, neste caso ele não pode voltar
+	}
 }
 
 //Após o jogador chutar a bola
