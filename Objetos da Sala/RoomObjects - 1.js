@@ -104,6 +104,13 @@ sala.onPlayerChat = function(jogador,mensagem) {
 	else if(mensagem == "!despausar") {
 		sala.pauseGame(false); //Modifica o estado de pausa da partida, neste caso, jogo despausado
 	}
+	
+	//Utilização do clearBan
+	//OBS: para testar, utilize 2 usuários, aquele que for banido, você usa o ID dele para desbanir
+	if(mensagem == "!desban") {
+		//sala.clearBan precisa somente de um número inteiro que representa o ID do jogador
+		sala.clearBan(1); //Desbane especificamente um usuário pelo id dele, a utilização do número 1 é só um exemplo
+	}
 }
 
 //Após o jogador chutar a bola
