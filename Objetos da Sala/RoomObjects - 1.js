@@ -223,6 +223,50 @@ sala.onPlayerChat = function(jogador,mensagem) {
 			sala.sendChat("Nome: " + jogadores[i].name);
 		}
 	}
+	
+	
+	//Utilização do getDiscCount
+	//OBS: Só vale quando a partida tiver sido inicializada
+	if(mensagem == "!contarDiscos") {
+		//sala.getDiscCount não possui nenhum atributo
+		discos = sala.getDiscCount(); //Captura a quantidade de discos dentro de campo, incluindo o jogador
+		sala.sendChat("No campo podemos ver " + discos + " discos");
+	}
+	
+	
+	//Utilização do getPlayerDiscProperties
+	//OBS: Só vale quando a partida tiver sido inicializada
+	if(mensagem == "!jogadorDisco") {
+		//sala.getPlayerDiscProperties precisa somente do ID correspondente a um jogador
+		prop = sala.getPlayerDiscProperties(jogador.id); //Captura todas as propriedades do disco do jogador específico
+		sala.sendChat("Raio de disco do jogador: " + prop.radius);
+	}
+	
+	
+	//Utlização do setPlayerDiscProperties
+	//OBS: Só vale quando a partida tiver sido inicializada
+	if(mensagem == "!mudarJogador") {
+		//sala.setPlayerDiscProperties precisa de um ID correspondentea um jogador e um/vários atributo(s) para mudar
+		sala.setPlayerDiscProperties(jogador.id, {radius: 6}); //Modifica algum(ns) atributos do jogador específico
+	}
+	
+	
+	//Utilização do getDiscProperties
+	//OBS: Só vale quando a partida tiver sido inicializada
+	if(mensagem == "!infoDisco") {
+		//sala.getDiscProperties precisa somente de um inteiro correspondente ao index do disco
+		info = sala.getDiscProperties(0); //Captura todas as propriedades do disco escolhido
+		sala.sendChat("Raio de disco do objeto index 0: " + info.radius);
+	}
+	
+	
+	//Utilização do setDiscProperties
+	//OBS: Só vale quando a partida tiver sido inicializada
+	if(mensagem == "!mudarDisco") {
+		//sala.setDiscProperties precisa de um inteiro que correponde ao index do disco e um/vários atributo(s) 
+		//que você desejar mudar
+		sala.setDiscProperties(0, {radius: 20}); //Modifica algum(ns) atributos do disco escolhido
+	}
 }
 
 //Após o jogador chutar a bola
