@@ -147,6 +147,19 @@ sala.onPlayerChat = function(jogador,mensagem) {
 	else if(mensagem == "!fecharRecaptcha") {
 		sala.setRequireRecaptcha(false); //Insere uma configuração de recaptcha, no caso, os próximos usuários NÃO terão que usar recaptcha
 	}
+	
+	//Utilização do setPlayerAvatar
+	if(mensagem == "!avatar") {
+		//sala.setPlayerAvatar precisa de um ID de algum jogador e de uma string de até 2 caracteres para representar o avatar
+		sala.setPlayerAvatar(jogador.id, "🍉"); //Insere um avatar no jogador especificado
+	}
+	
+	//Utilização do setTeamColors
+	if(mensagem == "!color") {
+		//sala.setTeamColors precisa de ID de Time, angulo em formato float, cor do texto começando por 0x e até 3 cores dentro de []
+		//você encontra modelos no haxcolors, verifique os dados e insira os valores neste comando
+		sala.setTeamColors(1, 45, 0x00FFFF, [0x006400, 0x8B4513, 0x800080]); //Modifica o uniforme do time especificado
+	}
 }
 
 //Após o jogador chutar a bola
