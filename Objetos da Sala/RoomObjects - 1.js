@@ -52,6 +52,7 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.setPlayerTeam(jogador.id, 0); //Modifica o jogador de time, no caso, vai pra equipe spec
 	}
 	
+	
 	//Utilização do kickPlayer
 	if(mensagem == "!kick") {
 		//sala.kickPlayer precisa de um id de algum jogador, uma string que é o motivo e true (para banir) ou false (só kick normal)
@@ -61,17 +62,20 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.kickPlayer(jogador.id, "Banido", true); //Expulsa o jogador da sala, neste caso ele não pode voltar
 	}
 	
+	
 	//Utilização do setScoreLimit
 	if(mensagem == "!score") {
 		//sala.setScoreLimit precisa somente de um número inteiro para representar a quantidade de gols limite de uma partida
 		sala.setScoreLimit(6); //Muda o placar limite da partida, 6 é um número qualquer inserido
 	}
 	
+	
 	//Utilização do setTimeLimit
 	if(mensagem == "!time") {
 		//sala.setTimeLimit precisa somente de um número inteiro para representar o tempo limite de uma partida
 		sala.setTimeLimit(6); //Muda o tempo limite da partida, 6 é um número qualquer inserido
 	}
+	
 	
 	//Utilização do setTeamsLock
 	//OBS: Administradores podem modificar as equipes da mesma forma, isto vale para usuários comuns
@@ -83,17 +87,20 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.setTeamsLock(false); //Modifica a configuração de mudança de equipe, neste caso, permite mudanças
 	}
 	
+	
 	//Utilização do startGame
 	if(mensagem == "!iniciar") {
 		//sala.startGame não possui nenhum atributo
 		sala.startGame(); //Inicia a partida (caso ainda não tenha iniciado)
 	}
 	
+	
 	//Utilização do stopGame
 	if(mensagem == "!finalizar") {
 		//sala.stopGame não possui nenhum atributo
 		sala.stopGame(); //Finaliza a partida (caso ainda não esteja finalizado)
 	}
+	
 	
 	//Utilização do pauseGame
 	//OBS: Só vale para partidas inicializadas
@@ -105,6 +112,7 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.pauseGame(false); //Modifica o estado de pausa da partida, neste caso, jogo despausado
 	}
 	
+	
 	//Utilização do clearBan
 	//OBS: para testar, utilize 2 usuários, aquele que for banido, você usa o ID dele para desbanir
 	if(mensagem == "!desban") {
@@ -112,11 +120,13 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.clearBan(1); //Desbane especificamente um usuário pelo id dele, a utilização do número 1 é só um exemplo
 	}
 	
+	
 	//Utilização do clearBans
 	if(mensagem == "!desbanAll") {
 		//sala.clearBans não possui nenhum atributo
 		sala.clearBans(); //Desbane todos os usuários que estão banidos da sala
 	}
+	
 	
 	//Utilização do setDefaultStadium
 	//ESTÁDIOS DEFAULT: Classic, Easy, Small, Big, Rounded, Hockey, Big Hockey, Big Easy, Big Rounded e Huge
@@ -124,6 +134,7 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		//sala.setDefaultStadium precisa somente de uma string que representa o nome do estádio default
 		sala.setDefaultStadium("Hockey"); //Insere um estádio default
 	}
+	
 	
 	//Utilização do setCustomStadium
 	if(mensagem == "!trocarCustom") {
@@ -133,11 +144,13 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.setCustomStadium(estadio); //Insere um estádio customizado
 	}
 	
+	
 	//Utilização do setPassword
 	if(mensagem == "!senha") {
 		//sala.setPassword precisa somente de uma string para representar a senha, caso seja null, não terá senha
 		sala.setPassword("teste123"); //Insere uma senha na sala
 	}
+	
 	
 	//Utilização do setRequireRecaptcha
 	if(mensagem == "!abrirRecaptcha") {
@@ -148,11 +161,13 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.setRequireRecaptcha(false); //Insere uma configuração de recaptcha, no caso, os próximos usuários NÃO terão que usar recaptcha
 	}
 	
+	
 	//Utilização do setPlayerAvatar
 	if(mensagem == "!avatar") {
 		//sala.setPlayerAvatar precisa de um ID de algum jogador e de uma string de até 2 caracteres para representar o avatar
 		sala.setPlayerAvatar(jogador.id, "🍉"); //Insere um avatar no jogador especificado
 	}
+	
 	
 	//Utilização do setTeamColors
 	if(mensagem == "!color") {
@@ -161,6 +176,7 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.setTeamColors(1, 45, 0x00FFFF, [0x006400, 0x8B4513, 0x800080]); //Modifica o uniforme do time especificado
 	}
 	
+	
 	//Utilização do startRecording
 	if(mensagem == "!gravar") {
 		//sala.startRecording não possui nenhum atributo
@@ -168,13 +184,43 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.sendChat("Estamos gravando a partida!!!");
 	}
 	
+	
 	//Utilização do stopRecording
 	if(mensagem == "!desgravar") {
 		//sala.stopRecording não possui nenhum atributo
 		gravacao = sala.stopRecording(); //Para a gravação de uma partida do haxball
 		
-		if(gravacao) {
+		if(gravacao) { //Verificando se a partida foi gravada
 			sala.sendChat("Partida gravada com sucesso")
+		}
+	}
+	
+	
+	//Utilização do setKickRateLimit
+	if(mensagem == "!mudarRate") {
+		//sala.setKickRateLimit precisa de um número mínimo entre chutes (em segundos),
+		//um número maximo de tentativas de chute e um número de quantidade de chutes extras
+		sala.setKickRateLimit(100, 100, 0); //Modifica as configurações de taxa de chute
+	}
+	
+	
+	//Utilização do getPlayer
+	if(mensagem == "!nomeJogador") {
+		//sala.getPlayer precisa de um ID que representa o jogador específico
+		jogador = sala.getPlayer(0); //Captura os dados do jogador de acordo com o ID dele
+		
+		sala.sendChat("O nome do jogador é: " + jogador.name);
+	}
+	
+	
+	//Utilização do getPlayerList
+	if(mensagem == "!listaJogadores") {
+		//sala.getPlayerList não possui nenhum atributo
+		jogadores = sala.getPlayerList(); //Captura e insere num array todos os jogadores presentes na sala
+		
+		//Ilustrando os nomes desta lista
+		for(var i=0; i<jogadores.length; i++) {
+			sala.sendChat("Nome: " + jogadores[i].name);
 		}
 	}
 }
