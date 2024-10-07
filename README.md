@@ -7,6 +7,8 @@ ORDEM PARA QUEM QUER APRENDER:
 
 --> Esqueleto
 
+--> Objetos da Sala
+
 --> Teste de Eventos
 
 --> Variáveis de Recebimento
