@@ -267,6 +267,33 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		//que você desejar mudar
 		sala.setDiscProperties(0, {radius: 20}); //Modifica algum(ns) atributos do disco escolhido
 	}
+	
+	
+	//Utilização do getScores
+	//OBS: Só vale quando a partida tiver sido inicializada
+	if(mensagem == "!placar") {
+		//sala.getScores não possui nenhum atributo
+		placar = sala.getScores(); //Captura todas as propriedades de pontuações de jogo
+		sala.sendChat("O placar está: RED " + placar.red + " X " + placar.blue + " BLUE");
+	}
+	
+	
+	//Utilização do reorderPlayers
+	if(mensagem == "!reordenar") {
+		jogadores = sala.getPlayerList();
+		//sala.reorderPlayers precisa de um array de ID de jogadores e true (para mover ao topo) ou false (para mover pro final)
+		sala.reorderPlayers(jogadores, false); //Modifica a ordem dos jogadores do array, movendo para o topo ou para o final da lista
+	}
+	
+	
+	//Utilização do getBallPosition
+	//OBS: Só vale quando a partida tiver sido inicializada
+	if(mensagem == "!posBola") {
+		//sala.getBallPosition não possui nenhum atributo
+		posicao = sala.getBallPosition(); //Captura a posição X e Y da bola no momento que é executado
+		sala.sendChat("Posição X da bola: " + posicao.x);
+		sala.sendChat("Posição Y da bola: " + posicao.y);
+	}
 }
 
 //Após o jogador chutar a bola
