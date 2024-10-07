@@ -49,7 +49,36 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		sala.kickPlayer(jogador.id, "kick", false); //Expulsa o jogador da sala, neste caso ele poderá voltar
 	}
 	else if(mensagem == "!ban") {
-		sala.kickPlayer(jogador.id, "Banido", true) //Expulsa o jogador da sala, neste caso ele não pode voltar
+		sala.kickPlayer(jogador.id, "Banido", true); //Expulsa o jogador da sala, neste caso ele não pode voltar
+	}
+	
+	//Utilização do setScoreLimit
+	if(mensagem == "!score") {
+		sala.setScoreLimit(6); //Muda o placar limite da partida, 6 é um número qualquer inserido
+	}
+	
+	//Utilização do setTimeLimit
+	if(mensagem == "!time") {
+		sala.setTimeLimit(6); //Muda o tempo limite da partida, 6 é um número qualquer inserido
+	}
+	
+	//Utilização do setTeamsLock
+	//OBS: Administradores podem modificar as equipes da mesma forma, isto vale para usuários comuns
+	if(mensagem == "!bloquear") {
+		sala.setTeamsLock(true); //Modifica a configuração de mudança de equipe, neste caso, proibe mudanças
+	}
+	else if(mensagem == "!desbloquear") {
+		sala.setTeamsLock(false); //Modifica a configuração de mudança de equipe, neste caso, permite mudanças
+	}
+	
+	//Utilização do startGame
+	if(mensagem == "!iniciar") {
+		sala.startGame(); //Inicia a partida (caso ainda não tenha iniciado)
+	}
+	
+	//Utilização do stopGame
+	if(mensagem == "!finalizar") {
+		sala.stopGame(); //Finaliza a partida (caso ainda não esteja finalizado)
 	}
 }
 
