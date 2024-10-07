@@ -160,6 +160,23 @@ sala.onPlayerChat = function(jogador,mensagem) {
 		//você encontra modelos no haxcolors, verifique os dados e insira os valores neste comando
 		sala.setTeamColors(1, 45, 0x00FFFF, [0x006400, 0x8B4513, 0x800080]); //Modifica o uniforme do time especificado
 	}
+	
+	//Utilização do startRecording
+	if(mensagem == "!gravar") {
+		//sala.startRecording não possui nenhum atributo
+		gravando = sala.startRecording(); //Inicia a gravação de uma partida do haxball
+		sala.sendChat("Estamos gravando a partida!!!");
+	}
+	
+	//Utilização do stopRecording
+	if(mensagem == "!desgravar") {
+		//sala.stopRecording não possui nenhum atributo
+		gravacao = sala.stopRecording(); //Para a gravação de uma partida do haxball
+		
+		if(gravacao) {
+			sala.sendChat("Partida gravada com sucesso")
+		}
+	}
 }
 
 //Após o jogador chutar a bola
