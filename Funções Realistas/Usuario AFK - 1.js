@@ -11,14 +11,16 @@ var sala = HBInit ({
 });
 
 //O objetivo a função é fazer com que o usuário fique inativo no SPEC sem que possa ser movido pra outra equipe
-var listaAFK = new Set();
+var listaAFK = new Set(); //Criando uma coleção
+
 function statusAFK(id) {
+	//Primeiro verifica se o usuário ja consta na lista de afks
 	if(listaAFK.has(id)) {
-		listaAFK.delete(id);
+		listaAFK.delete(id);//Caso verdadeiro, ele será removido da lista e ficará disponível para jogar
 	}
 	else {
-		listaAFK.add(id);
-		sala.setPlayerTeam(id, 0);
+		listaAFK.add(id); //Caso falso, ele entrará na lista e ficará impedido de trocar de time
+		sala.setPlayerTeam(id, 0); //Indo para o spec caso ele esteja em alguma equipe
 	}
 }
 
